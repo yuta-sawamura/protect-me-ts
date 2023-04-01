@@ -1,20 +1,28 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
+name: "\U0001F680Feature request"
+about: Suggest a feature for ProtectMe
+title: "[🚀] "
 labels: feature
 assignees: yuta-sawamura
-
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+<!--🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+To expedite issue processing please search open and closed issues before submitting a new one.
+Existing issues often contain information about workarounds, resolution, or progress updates.
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅-->
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+# :rocket: Feature request
+
+### Description
+
+<!-- ✍️--> A clear and concise description of the problem or missing capability...
+
+### Solution ideas
+
+<!-- ✍️--> If you have a solution in mind, please describe it.
+
+### Possible alternatives
+
+<!-- ✍️--> Have you considered any alternative solutions or workarounds?
