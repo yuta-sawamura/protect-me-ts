@@ -15,14 +15,10 @@ Existing issues often contain information about workarounds, resolution, or prog
 
 # :rocket: Feature request
 
-### Description
+## Description
 
-<!-- ✍️--> A clear and concise description of the problem or missing capability...
+## TODO
 
-### Solution ideas
+- [ ]
 
-<!-- ✍️--> If you have a solution in mind, please describe it.
-
-### Possible alternatives
-
-<!-- ✍️--> Have you considered any alternative solutions or workarounds?
+## PR
