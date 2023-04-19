@@ -16,5 +16,5 @@ $ npm run start:dev
 
 ## ドキュメント
 
-- [分析方法](https://github.com/yuta-sawamura/protect-me/docs/analysis.md)
-- [対策方法](https://github.com/yuta-sawamura/protect-me/measures.md)
+- [分析方法](https://github.com/yuta-sawamura/protect-me/blob/develop/docs/analysis.md)
+- [対策方法](https://github.com/yuta-sawamura/protect-me/blob/develop/docs/measures.md)
