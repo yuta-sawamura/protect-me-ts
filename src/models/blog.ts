@@ -1,4 +1,4 @@
-import { DataTypes, Model, Association } from "sequelize";
+import { DataTypes, Model, Association, Op } from "sequelize";
 import { sequelize } from "./index";
 import { User } from "./user";
 
