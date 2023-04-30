@@ -3,7 +3,7 @@ import { Blog } from "../models/blog";
 import { User } from "../models/user";
 import { Op } from "sequelize";
 
-export async function index(req: Request, res: Response) {
+export async function blogIndex(req: Request, res: Response) {
   try {
     const blogs = await Blog.findAll({
       include: [
@@ -14,14 +14,14 @@ export async function index(req: Request, res: Response) {
       ],
       order: [["createdAt", "DESC"]],
     });
-    res.render("index", { blogs, searchQuery: "" });
+    res.render("blogs/index", { blogs, searchQuery: "" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "An error occurred while fetching blogs." });
   }
 }
 
-export async function search(req: Request, res: Response) {
+export async function blogSearch(req: Request, res: Response) {
   try {
     const query = req.query.q as string;
 
@@ -48,7 +48,7 @@ export async function search(req: Request, res: Response) {
       ],
     });
 
-    res.render("index", { blogs, searchQuery: query });
+    res.render("blogs/index", { blogs, searchQuery: query });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "An error occurred while searching blogs." });
