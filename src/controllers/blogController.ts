@@ -10,7 +10,7 @@ export async function blogIndex(req: Request, res: Response) {
         {
           model: User,
           as: "user",
-        },
+              },
       ],
       order: [["createdAt", "DESC"]],
     });
