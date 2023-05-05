@@ -1,10 +1,10 @@
 import { Sequelize } from "sequelize";
 import path from "path";
 
-const databasePath = path.resolve(__dirname, '..', '..', 'database.sqlite');
+const databasePath = path.resolve(__dirname, "..", "..", "database.sqlite");
 
 const sequelize = new Sequelize({
-  dialect: 'sqlite',
+  dialect: "sqlite",
   storage: databasePath,
   logging: console.log,
 });

@@ -17,7 +17,9 @@ export async function blogIndex(req: Request, res: Response) {
     res.render("blogs/index", { blogs, searchQuery: "" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "An error occurred while fetching blogs." });
+    res
+      .status(500)
+      .json({ message: "An error occurred while fetching blogs." });
   }
 }
 
@@ -51,6 +53,8 @@ export async function blogSearch(req: Request, res: Response) {
     res.render("blogs/index", { blogs, searchQuery: query });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "An error occurred while searching blogs." });
+    res
+      .status(500)
+      .json({ message: "An error occurred while searching blogs." });
   }
 }

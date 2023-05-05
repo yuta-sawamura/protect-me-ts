@@ -34,7 +34,7 @@ Blog.init(
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      field: 'user_id',
+      field: "user_id",
       references: {
         model: User,
         key: "id",
@@ -43,12 +43,12 @@ Blog.init(
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      field: 'created_at'
+      field: "created_at",
     },
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      field: 'updated_at'
+      field: "updated_at",
     },
   },
   {
