@@ -9,7 +9,8 @@
     "start": "ts-node src/server.ts",
     "start:dev": "nodemon",
     "serve": "npm run build && node dist/server.js",
-    "format": "prettier --write \"./**/*.{ts,js,json,md}\" --ignore-path .gitignore"
+    "format": "prettier --write \"./**/*.{ts,js,json,md}\" --ignore-path .gitignore",
+    "check-format": "prettier --check \"./**/*.{ts,js,json,md}\" --ignore-path .gitignore"
   },
   "repository": {
     "type": "git",
