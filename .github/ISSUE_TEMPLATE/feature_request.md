@@ -20,5 +20,3 @@ Existing issues often contain information about workarounds, resolution, or prog
 ## TODO
 
 - [ ]
-
-## PR

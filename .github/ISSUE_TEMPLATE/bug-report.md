@@ -22,5 +22,3 @@ Please also make sure to check the official [Troubleshooting guide](https://pwni
 ## TODO
 
 - [ ]
-
-## PR
