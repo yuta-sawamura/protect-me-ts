@@ -48,6 +48,10 @@ export async function blogDetail(req: Request, res: Response) {
   }
 }
 
+export function blogNew(_: Request, res: Response) {
+  res.render("blogs/new");
+}
+
 export async function blogSearch(req: Request, res: Response) {
   try {
     const query = req.query.q as string;
