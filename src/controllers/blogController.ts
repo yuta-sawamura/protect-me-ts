@@ -52,6 +52,20 @@ export function blogNew(_: Request, res: Response) {
   res.render("blogs/new");
 }
 
+export function blogEdit(req: Request, res: Response) {
+  const id = req.params.id;
+  Blog.findByPk(id).then((blog) => {
+    if (blog) {
+      res.render("blogs/edit", {
+        blog: blog
+      });
+    } else {
+      res.status(404).send("Blog not found");
+    }
+  });
+}
+
+
 export async function blogSearch(req: Request, res: Response) {
   try {
     const query = req.query.q as string;
