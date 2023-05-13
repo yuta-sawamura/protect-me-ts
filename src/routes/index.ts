@@ -1,5 +1,9 @@
 import express from "express";
-import { blogIndex, blogSearch, blogDetail } from "../controllers/blogController";
+import {
+  blogIndex,
+  blogSearch,
+  blogDetail,
+} from "../controllers/blogController";
 import { scoreIndex } from "../controllers/scoreController";
 
 const router = express.Router();
