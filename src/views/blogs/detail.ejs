@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head'); %>
+  <body class="bg-gray-100">
+    <%- include('../partials/header'); %>
+
+    <main class="container mx-auto px-4 py-16">
+      <div class="divide-y divide-gray-200 mb-3">
+        <div class="bg-white shadow-md rounded-md p-4">
+          <div class="flex items-start">
+            <img
+              src="<%= blog.user.img %>"
+              alt="User Image"
+              class="rounded-full w-10 h-10 mr-4"
+            />
+            <div>
+              <div class="text-gray-700 text-sm">
+                <span>@<%= blog.user.name %></span>
+              </div>
+              <div class="text-gray-700 text-sm mb-2">
+                <span><%= blog.createdAt.toISOString().slice(0, 10) %></span>
+              </div>
+              <h2 class="text-xl font-semibold mb-2"><%= blog.title %></h2>
+              <div class="text-gray-600 text-base mb-4">
+                <%= blog.content %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
