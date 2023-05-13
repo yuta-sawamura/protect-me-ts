@@ -23,6 +23,31 @@ export async function blogIndex(req: Request, res: Response) {
   }
 }
 
+export async function blogDetail(req: Request, res: Response) {
+  try {
+    const id = req.params.id;
+    const blog = await Blog.findOne({
+      where: { id },
+      include: [
+        {
+          model: User,
+          as: "user",
+        },
+      ],
+    });
+    if (blog) {
+      res.render("blogs/detail", { blog });
+    } else {
+      res.status(404).json({ message: "Not found." });
+    }
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ message: "An error occurred while fetching the blog." });
+  }
+}
+
 export async function blogSearch(req: Request, res: Response) {
   try {
     const query = req.query.q as string;

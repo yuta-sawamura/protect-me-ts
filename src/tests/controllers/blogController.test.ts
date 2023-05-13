@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
-import { blogIndex, blogSearch } from "../../controllers/blogController";
+import {
+  blogIndex,
+  blogSearch,
+  blogDetail,
+} from "../../controllers/blogController";
 import { Blog } from "../../models/blog";
 
 jest.mock("../../models/blog");
@@ -43,6 +47,54 @@ describe("blogController", () => {
         blogs: mockBlogs,
         searchQuery: "",
       });
+    });
+  });
+
+  describe("blogDetail", () => {
+    it("should render blogs/detail with blog data", async () => {
+      const mockBlog = mockBlogs[0];
+      (Blog.findOne as jest.Mock).mockResolvedValue(mockBlog);
+
+      const req = {
+        params: {
+          id: mockBlog.id,
+        },
+      } as unknown as Request;
+
+      const res = {
+        status: jest.fn().mockReturnThis(),
+        json: jest.fn(),
+        render: jest.fn(),
+      } as unknown as Response;
+
+      await blogDetail(req, res);
+
+      expect(Blog.findOne).toHaveBeenCalledTimes(1);
+      expect(res.render).toHaveBeenCalledWith("blogs/detail", {
+        blog: mockBlog,
+      });
+    });
+
+    it("should return 404 if blog not found", async () => {
+      (Blog.findOne as jest.Mock).mockResolvedValue(null);
+
+      const req = {
+        params: {
+          id: 999,
+        },
+      } as unknown as Request;
+
+      const res = {
+        status: jest.fn().mockReturnThis(),
+        json: jest.fn(),
+        render: jest.fn(),
+      } as unknown as Response;
+
+      await blogDetail(req, res);
+
+      expect(Blog.findOne).toHaveBeenCalledTimes(1);
+      expect(res.status).toHaveBeenCalledWith(404);
+      expect(res.json).toHaveBeenCalledWith({ message: "Not found." });
     });
   });
 

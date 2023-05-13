@@ -5,7 +5,6 @@
     <%- include('../partials/header'); %>
 
     <main class="container mx-auto px-4 py-16">
-      <h2 class="text-2xl font-bold mb-6">Blog</h2>
       <div class="mb-6">
         <form action="/search" method="GET">
           <div class="relative">
@@ -34,7 +33,7 @@
       </div>
       <% blogs.forEach(function(blog) { %>
       <div class="divide-y divide-gray-200 mb-3">
-        <a href="/" class="block">
+        <a href="/blog/<%= blog.id %>" class="block">
           <div
             class="bg-white shadow-md rounded-md p-4 hover:cursor-pointer transition"
           >
@@ -52,25 +51,6 @@
                   <span><%= blog.createdAt.toISOString().slice(0, 10) %></span>
                 </div>
                 <h2 class="text-xl font-semibold mb-2"><%= blog.title %></h2>
-                <div class="flex items-center">
-                  <div class="flex items-center -ml-1">
-                    <svg
-                      class="h-5 w-5 text-gray-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M12 21C12 21 3 14.9091 3 8.63636C3 5.63636 5.2381 3 8.09524 3C10.3808 3 11.9996 4.61884 12 6.90909C12.0004 4.61884 13.6192 3 15.9048 3C18.7619 3 21 5.63636 21 8.63636C21 14.9091 12 21 12 21Z"
-                      />
-                    </svg>
-                    <span class="ml-1 text-black-400">123</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
