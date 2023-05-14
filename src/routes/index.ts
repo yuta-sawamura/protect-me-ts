@@ -19,6 +19,9 @@ router.get("/blog/:id", blogDetail);
 router.get("/login", (req: Request, res: Response) => {
   res.render("login");
 });
+router.get("/signup", (req: Request, res: Response) => {
+  res.render("signup");
+});
 router.get("/score", scoreIndex);
 
 export default router;

@@ -7,8 +7,20 @@
       <div
         class="divide-y divide-gray-200 bg-white shadow-md rounded-md p-4 w-full max-w-md"
       >
-        <h2 class="text-xl font-semibold mb-2">Login</h2>
-        <form action="/login" method="POST">
+        <h2 class="text-xl font-semibold mb-2">Sign Up</h2>
+        <form action="/signup" method="POST">
+          <div class="mb-4">
+            <label for="name" class="block text-lg font-medium text-gray-700"
+              >name</label
+            >
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="border-2 border-gray-300 rounded-md w-full p-2"
+              required
+            />
+          </div>
           <div class="mb-4">
             <label for="email" class="block text-lg font-medium text-gray-700"
               >Email</label
@@ -35,19 +47,33 @@
               required
             />
           </div>
+          <div class="mb-4">
+            <label
+              for="passwordConfirm"
+              class="block text-lg font-medium text-gray-700"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              name="passwordConfirm"
+              id="passwordConfirm"
+              class="border-2 border-gray-300 rounded-md w-full p-2"
+              required
+            />
+          </div>
           <div class="text-right">
             <button
               type="submit"
               class="bg-blue-600 text-white rounded-md px-4 py-2"
             >
-              Login
+              Sign Up
             </button>
           </div>
         </form>
         <div class="mt-4 text-center">
           <p class="text-gray-700">
-            Don't have an account?
-            <a href="/signup" class="text-blue-600 hover:underline">Sign Up</a>
+            Already have an account?
+            <a href="/login" class="text-blue-600 hover:underline">Login</a>
           </p>
         </div>
       </div>
