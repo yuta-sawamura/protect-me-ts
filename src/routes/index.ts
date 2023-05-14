@@ -6,6 +6,7 @@ import {
   blogEdit,
   blogDetail,
 } from "../controllers/blogController";
+import { userDetail } from "../controllers/userController";
 import { scoreIndex } from "../controllers/scoreController";
 import { Request, Response } from "express";
 
@@ -22,6 +23,7 @@ router.get("/login", (req: Request, res: Response) => {
 router.get("/signup", (req: Request, res: Response) => {
   res.render("signup");
 });
+router.get("/user/:id", userDetail);
 router.get("/score", scoreIndex);
 
 export default router;
