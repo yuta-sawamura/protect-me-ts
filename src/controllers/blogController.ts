@@ -57,14 +57,13 @@ export function blogEdit(req: Request, res: Response) {
   Blog.findByPk(id).then((blog) => {
     if (blog) {
       res.render("blogs/edit", {
-        blog: blog
+        blog: blog,
       });
     } else {
       res.status(404).send("Blog not found");
     }
   });
 }
-
 
 export async function blogSearch(req: Request, res: Response) {
   try {
