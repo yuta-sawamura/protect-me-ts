@@ -7,7 +7,7 @@ export async function userDetail(req: Request, res: Response) {
     const id = parseInt(req.params.id);
     const user = await User.findOne({
       where: { id },
-      include: [{ model: Blog, as: "blogs" }]
+      include: [{ model: Blog, as: "blogs" }],
     });
 
     if (user) {
@@ -17,6 +17,8 @@ export async function userDetail(req: Request, res: Response) {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "An error occurred while fetching the user detail." });
+    res
+      .status(500)
+      .json({ message: "An error occurred while fetching the user detail." });
   }
 }
