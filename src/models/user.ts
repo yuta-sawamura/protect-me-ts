@@ -1,5 +1,6 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "./index";
+import { Blog } from "./blog";
 
 export class User extends Model {
   public id!: number;
@@ -9,6 +10,7 @@ export class User extends Model {
   public img!: string;
   public createdAt!: Date;
   public updatedAt!: Date;
+  public readonly blogs?: Blog[];
 }
 
 User.init(
