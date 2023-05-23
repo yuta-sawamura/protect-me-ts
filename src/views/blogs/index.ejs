@@ -36,32 +36,8 @@
           </div>
         </form>
       </div>
-      <% blogs.forEach(function(blog) { %>
-      <div class="divide-y divide-gray-200 mb-3">
-        <a href="/blog/<%= blog.id %>" class="block">
-          <div
-            class="bg-white shadow-md rounded-md p-4 hover:cursor-pointer transition"
-          >
-            <div class="flex items-start">
-              <img
-                src="<%= blog.user.img %>"
-                alt="User Image"
-                class="rounded-full w-10 h-10 mr-4"
-              />
-              <div>
-                <div class="text-gray-700 text-sm">
-                  <span>@<%= blog.user.name %></span>
-                </div>
-                <div class="text-gray-700 text-sm mb-2">
-                  <span><%= blog.createdAt.toISOString().slice(0, 10) %></span>
-                </div>
-                <h2 class="text-xl font-semibold mb-2"><%= blog.title %></h2>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <% }) %>
+      <% blogs.forEach(function(blog) { %> <%- include('../partials/blog-card',
+      { blog: blog}); %> <% }) %>
     </main>
   </body>
 </html>
