@@ -4,14 +4,24 @@ import { User } from "../models/user";
 
 export async function userDetail(req: Request, res: Response) {
   try {
-    const id = parseInt(req.params.id);
+    const userId = parseInt(req.params.id);
     const user = await User.findOne({
-      where: { id },
-      include: [{ model: Blog, as: "blogs" }],
+      where: { id: userId },
+    });
+
+    const blogs = await Blog.findAll({
+      where: { userId: userId },
+      include: [
+        {
+          model: User,
+          as: "user",
+        },
+      ],
+      order: [["createdAt", "DESC"]],
     });
 
     if (user) {
-      res.render("users/detail", { user, userBlogs: user.blogs });
+      res.render("users/detail", { user, blogs });
     } else {
       res.status(404).json({ message: "User not found." });
     }

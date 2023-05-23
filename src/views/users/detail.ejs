@@ -5,44 +5,28 @@
     <%- include('../partials/header'); %>
 
     <main class="container mx-auto px-4 py-16">
-      <div class="flex items-center mb-4">
-        <img
-          src="<%= user.img %>"
-          alt="User Image"
-          class="rounded-full w-20 h-20 mr-4"
-        />
-        <div>
-          <div class="text-gray-700 text-lg">
-            <span>Posts by @<%= user.name %></span>
-          </div>
-        </div>
-      </div>
-      <% userBlogs.forEach(function(blog) { %>
-      <div class="divide-y divide-gray-200 mb-3">
-        <a href="/blog/<%= blog.id %>" class="block">
-          <div
-            class="bg-white shadow-md rounded-md p-4 hover:cursor-pointer transition"
-          >
-            <div class="flex items-start">
-              <img
-                src="<%= user.img %>"
-                alt="User Image"
-                class="rounded-full w-10 h-10 mr-4"
-              />
-              <div>
-                <div class="text-gray-700 text-sm">
-                  <span>@<%= user.name %></span>
-                </div>
-                <div class="text-gray-700 text-sm mb-2">
-                  <span><%= blog.createdAt.toISOString().slice(0, 10) %></span>
-                </div>
-                <h2 class="text-xl font-semibold mb-2"><%= blog.title %></h2>
-              </div>
+      <div class="flex justify-between items-center mb-4">
+        <div class="flex items-center">
+          <img
+            src="<%= user.img %>"
+            alt="User Image"
+            class="rounded-full w-20 h-20 mr-4"
+          />
+          <div>
+            <div class="text-gray-700 text-lg">
+              <span>Posts by @<%= user.name %></span>
             </div>
           </div>
-        </a>
+        </div>
+
+        <a
+          href="/your-logout-endpoint-here"
+          class="bg-red-600 text-white rounded-md px-4 py-2"
+          >Delete Account</a
+        >
       </div>
-      <% }) %>
+      <% blogs.forEach(function(blog) { %> <%- include('../partials/blog-card',
+      { blog: blog}); %> <% }) %>
     </main>
   </body>
 </html>
