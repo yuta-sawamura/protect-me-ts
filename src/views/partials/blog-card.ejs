@@ -1,26 +1,28 @@
 <div class="divide-y divide-gray-200 mb-3">
-  <a href="/blog/<%= blog.id %>" class="block">
-    <div
-      class="bg-white shadow-md rounded-md p-4 hover:cursor-pointer transition"
-    >
-      <div class="flex items-start">
-        <a href="/user/<%= blog.user.id %>">
-          <img
-            src="<%= blog.user.img %>"
-            alt="User Image"
-            class="rounded-full w-10 h-10 mr-4"
-          />
-        </a>
-        <div>
-          <a href="/user/<%= blog.user.id %>" class="text-gray-700 text-sm">
+  <div
+    class="bg-white shadow-md rounded-md p-4 hover:cursor-pointer transition"
+  >
+    <div class="flex items-start">
+      <a href="/user/<%= blog.user.id %>">
+        <img
+          src="<%= blog.user.img %>"
+          alt="User Image"
+          class="rounded-full w-10 h-10 mr-4"
+        />
+      </a>
+      <div>
+        <div class="text-gray-700 text-sm">
+          <a href="/user/<%= blog.user.id %>">
             <span>@<%= blog.user.name %></span>
           </a>
-          <div class="text-gray-700 text-sm mb-2">
-            <span><%= blog.createdAt.toISOString().slice(0, 10) %></span>
-          </div>
-          <h2 class="text-xl font-semibold mb-2"><%= blog.title %></h2>
         </div>
+        <div class="text-gray-700 text-sm mb-2">
+          <span><%= blog.createdAt.toISOString().slice(0, 10) %></span>
+        </div>
+        <a href="/blog/<%= blog.id %>">
+          <h2 class="text-xl font-semibold mb-2"><%= blog.title %></h2>
+        </a>
       </div>
     </div>
-  </a>
+  </div>
 </div>
