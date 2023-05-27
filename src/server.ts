@@ -1,18 +1,20 @@
 import express from "express";
 import path from "path";
 import routes from "./routes";
-import bodyParser from 'body-parser';
-import session from 'express-session';
-import flash from 'connect-flash';
+import bodyParser from "body-parser";
+import session from "express-session";
+import flash from "connect-flash";
 
 const app = express();
 const port = 3000;
 
-app.use(session({
-  secret: 'your secret key',
-  resave: false,
-  saveUninitialized: true,
-}));
+app.use(
+  session({
+    secret: "your secret key",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 app.use(flash());
 
