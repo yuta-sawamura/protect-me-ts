@@ -1,4 +1,4 @@
-import { DataTypes, Model, Association, Op } from "sequelize";
+import { DataTypes, Model } from "sequelize";
 import { sequelize } from "./index";
 import { User } from "./user";
 
@@ -9,11 +9,7 @@ export class Blog extends Model {
   public userId!: number;
   public createdAt!: Date;
   public updatedAt!: Date;
-
   public user!: User;
-  public static associations: {
-    user: Association<Blog, User>;
-  };
 }
 
 Blog.init(
@@ -61,4 +57,3 @@ Blog.init(
 );
 
 Blog.belongsTo(User, { foreignKey: "user_id", as: "user" });
-User.hasMany(Blog, { foreignKey: "user_id", as: "blogs" });
