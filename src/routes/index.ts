@@ -6,7 +6,7 @@ import {
   blogEdit,
   blogDetail,
 } from "../controllers/blogController";
-import { userDetail } from "../controllers/userController";
+import { userDetail, createUser } from "../controllers/userController";
 import { scoreIndex } from "../controllers/scoreController";
 import { Request, Response } from "express";
 
@@ -18,11 +18,14 @@ router.get("/blog/new", blogNew);
 router.get("/blog/:id/edit", blogEdit);
 router.get("/blog/:id", blogDetail);
 router.get("/login", (req: Request, res: Response) => {
-  res.render("login");
+  const messages = req.flash("success");
+  res.render("login", { messages });
 });
 router.get("/signup", (req: Request, res: Response) => {
-  res.render("signup");
+  const messages = req.flash("error");
+  res.render("signup", { messages });
 });
+router.post("/signup", createUser);
 router.get("/user/:id", userDetail);
 router.get("/score", scoreIndex);
 
