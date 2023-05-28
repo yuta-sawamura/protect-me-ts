@@ -33,6 +33,27 @@ export async function createUser(req: Request, res: Response) {
   }
 }
 
+export async function loginUser(req: Request, res: Response) {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ where: { email } });
+
+    if (!user || user.password !== password) {
+      req.flash("error", "Invalid email or password.");
+      return res.redirect("/login");
+    }
+
+    (req.session as any).userId = user.id;
+    req.flash("success", "Logged in successfully.");
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    req.flash("error", "An error occurred during login.");
+    res.redirect("/login");
+  }
+}
+
 export async function userDetail(req: Request, res: Response) {
   try {
     const userId = parseInt(req.params.id);
